@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
           Card(
             child:
             ListTile(
-              title: Text('GetX Dialog Alert'),
+              title: Text(' GetX Dialog Alert'),
               subtitle: Text('GetX Dialog Alert with GetX'),
               onTap: (){
                 Get.defaultDialog(
@@ -49,6 +49,56 @@ class _HomePageState extends State<HomePage> {
                 );
 
               },
+            ),
+          ),//dialog alert
+          Card(
+            child:
+            ListTile(
+              title: Text('GetX Bottom SHeet'),
+              subtitle: Text('Building a bottomsheet with the help of getx'),
+              onTap:(){
+                Get.bottomSheet(
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          title:Text('Light theme'),
+                          leading: Icon(Icons.light_mode),
+                          onTap: (){
+                            Get.changeTheme(ThemeData.light());
+
+                          },
+                        ),
+                        ListTile(
+                          title:Text('Dark theme'),
+                          leading: Icon(Icons.dark_mode),
+                          onTap: (){
+                            Get.changeTheme(ThemeData.dark());
+
+                          },
+                        ),
+
+                      ],
+                    ),
+                  )
+                );
+              },
+            ),
+          ), //bottomsheet
+          Card(
+            child:ListTile(
+              title: Text('GetX Navigation'),
+              subtitle: Text('Navigation with the help of GetX'),
+              onTap: (){
+                Get
+              },
+
+
+
             ),
           )
 

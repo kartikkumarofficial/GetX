@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'homepage.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+    return GetMaterialApp( // Use GetMaterialApp instead of MaterialApp
+      title: 'GetX Theme Demo',
+      theme: ThemeData.light(), // Default theme
+      darkTheme: ThemeData.dark(), // Dark theme
+      themeMode: ThemeMode.light, // Initial theme mode
       home: HomePage(),
     );
   }
 }
-
