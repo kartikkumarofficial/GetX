@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/screen2.dart';
+import 'package:getx/screen3.dart';
+import 'languages.dart';
 
 
 
@@ -11,6 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool flag = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,14 +40,18 @@ class _HomePageState extends State<HomePage> {
                   Get.back(); },
                 onCancel: (){
                     print('Cancelled');
-                    // Get.back();
+                    Get.back();
 
                 },
                   contentPadding: EdgeInsets.all(20),
                   textCancel: 'No',
                   textConfirm: 'Yes',
-                  confirm: TextButton(onPressed: (){}, child: Text('OK')),
-                  cancel: TextButton(onPressed: (){}, child: Text('Cancel')),
+                  confirm: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('OK')),
+                  cancel: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('Cancel')),
 
 
                 );
@@ -54,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           Card(
             child:
             ListTile(
-              title: Text('GetX Bottom SHeet'),
+              title: Text('GetX Bottom Sheet'),
               subtitle: Text('Building a bottomsheet with the help of getx'),
               onTap:(){
                 Get.bottomSheet(
@@ -94,13 +102,43 @@ class _HomePageState extends State<HomePage> {
               title: Text('GetX Navigation'),
               subtitle: Text('Navigation with the help of GetX'),
               onTap: (){
-                Get
+                Get.to(screen2());
               },
 
 
 
             ),
-          )
+          ),
+          Card(
+            child:
+            ListTile(
+              title: Text(' MediaQuery Page'),
+              subtitle: Text('Mediaquery given to elements using GetX'),
+              onTap: (){
+                Get.to(screen3());
+              }
+
+
+            ),
+          ),//dialog alert
+          Card(
+            child:
+            ListTile(
+              title: Text('localisation'.tr),
+              subtitle: Text('language'.tr),
+              onTap:(){
+                if (flag == true) {
+                  Get.updateLocale(Locale('hi','IN'));
+                } else {
+                  Get.updateLocale(Locale('en','US'));
+                }
+                flag = !flag;
+
+
+              },
+            ),
+          ), //bottomsheet
+
 
         ],
       ),
@@ -115,7 +153,7 @@ class _HomePageState extends State<HomePage> {
             fontSize: 30,
             fontWeight: FontWeight.bold),),
           borderRadius: 30,
-          duration: Duration(seconds: 1),
+          duration: Duration(seconds: 4),
           snackPosition: SnackPosition.TOP,
           icon: Icon(Icons.notification_important),
           isDismissible: true,
