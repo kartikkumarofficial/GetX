@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx/screen2.dart';
 import 'package:getx/screen3.dart';
 import 'languages.dart';
+import 'CounterApp/counterHome.dart';
 
 
 
@@ -108,7 +109,7 @@ class _HomePageState extends State<HomePage> {
 
 
             ),
-          ),
+          ), //navigation
           Card(
             child:
             ListTile(
@@ -120,7 +121,7 @@ class _HomePageState extends State<HomePage> {
 
 
             ),
-          ),//dialog alert
+          ),//mediaquery
           Card(
             child:
             ListTile(
@@ -137,7 +138,19 @@ class _HomePageState extends State<HomePage> {
 
               },
             ),
-          ), //bottomsheet
+          ), //localisation
+          Card(
+            child:ListTile(
+              title: Text('Counter App'),
+              subtitle: Text('Learning Controller using COunter App'),
+              onTap: (){
+                Get.to(counterApp());
+              },
+
+
+
+            ),
+          ),//CounterApp
 
 
         ],
