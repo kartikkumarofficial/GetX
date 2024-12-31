@@ -30,3 +30,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+//obs=observable integer = any widget that depends on .obs will rebuild when var changes
+//obs=observable widget = it is a widget that listens to observable variables  , when the variable changes in obs , it changes its value in obx hence changes the widget , eliminates the use of setstate

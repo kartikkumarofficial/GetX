@@ -151,6 +151,19 @@ class _HomePageState extends State<HomePage> {
 
             ),
           ),//CounterApp
+    Card(
+    child:ListTile(
+    title: Text('Opacity Changer App'),
+    subtitle: Text('Changes the opacity with slider'),
+    onTap: (){
+    Get.to(counterApp());
+    },
+
+
+
+    ),
+    ),
+
 
 
         ],
