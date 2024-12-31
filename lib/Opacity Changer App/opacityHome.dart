@@ -38,7 +38,7 @@ class _OpacityAppState extends State<OpacityApp> {
               value: opacityController.opacity.value,
               min: 0.0,
               max: 1.0,
-              divisions: 10,
+              // divisions: 10,
               label: opacityController.opacity.value.toStringAsFixed(1),
               onChanged: (value) {
                 print('Slider Value: $value');
