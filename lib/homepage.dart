@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/Opacity%20Changer%20App/opacityHome.dart';
 import 'package:getx/screen2.dart';
 import 'package:getx/screen3.dart';
 import 'languages.dart';
@@ -156,7 +157,7 @@ class _HomePageState extends State<HomePage> {
     title: Text('Opacity Changer App'),
     subtitle: Text('Changes the opacity with slider'),
     onTap: (){
-    Get.to(counterApp());
+    Get.to(opacityApp());
     },
 
 
