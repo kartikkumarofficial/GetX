@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/controllers/opacity_controller.dart';
 
-class opacityApp extends StatelessWidget {
+class opacityApp extends StatefulWidget {
   opacityApp({super.key});
+
+  @override
+  State<opacityApp> createState() => _opacityAppState();
+}
+
+class _opacityAppState extends State<opacityApp> {
+  OpacityController opacityController =Get.put(OpacityController()) ;
   double opacity = 0.4 ;
 
   @override
@@ -13,19 +21,23 @@ class opacityApp extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              color: Colors.red,
+            Obx(()=>Container(
+              color: Colors.red.withOpacity(opacity),
               height: 300,
               width: 300,
-            ),
-            Slider(value: opacity, onChanged: (value) {
+            ),),
+            Obx(()=>Slider(value: opacity, onChanged: (value) {
               print(value);
               value = opacity;
-              
-            }, ),
+              // OpacityController.setOpa
+
+            }, ),)
+
+
 
           ],
         ),
