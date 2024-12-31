@@ -2,47 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/controllers/opacity_controller.dart';
 
-class opacityApp extends StatefulWidget {
-  opacityApp({super.key});
+class OpacityApp extends StatefulWidget {
+  OpacityApp({super.key});
 
   @override
-  State<opacityApp> createState() => _opacityAppState();
+  State<OpacityApp> createState() => _OpacityAppState();
 }
 
-class _opacityAppState extends State<opacityApp> {
-  OpacityController opacityController =Get.put(OpacityController()) ;
-  double opacity = 0.4 ;
+class _OpacityAppState extends State<OpacityApp> {
+  // Instantiate the OpacityController
+  final OpacityController opacityController = Get.put(OpacityController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Opacity Changer'),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Obx(()=>Container(
-              color: Colors.red.withOpacity(opacity),
+            // Reactive Opacity Container
+            Obx(() => Container(
+              color: Colors.red.withOpacity(opacityController.opacity.value),
               height: 300,
               width: 300,
-            ),),
-            Obx(()=>Slider(value: opacity, onChanged: (value) {
-              print(value);
-              value = opacity;
-              // OpacityController.setOpa
+            )),
+            SizedBox(height: 20),
 
-            }, ),)
-
-
-
+            // Slider to Control Opacity
+            Obx(() => Slider(
+              value: opacityController.opacity.value,
+              min: 0.0,
+              max: 1.0,
+              divisions: 10,
+              label: opacityController.opacity.value.toStringAsFixed(1),
+              onChanged: (value) {
+                print('Slider Value: $value');
+                opacityController.setOpacity(value);
+              },
+            )),
           ],
         ),
       ),
-
     );
   }
 }

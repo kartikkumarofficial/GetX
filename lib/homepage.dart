@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
     title: Text('Opacity Changer App'),
     subtitle: Text('Changes the opacity with slider'),
     onTap: (){
-    Get.to(opacityApp());
+    Get.to(OpacityApp());
     },
 
 
