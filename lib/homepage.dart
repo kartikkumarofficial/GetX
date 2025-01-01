@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/Opacity%20Changer%20App/opacityHome.dart';
 import 'package:getx/controllers/switch_controller.dart';
+import 'package:getx/favouriteHome.dart';
 import 'package:getx/screen2.dart';
 import 'package:getx/screen3.dart';
 import 'languages.dart';
@@ -181,6 +182,13 @@ class _HomePageState extends State<HomePage> {
                         onChanged: (value){
                           print('Switch Value: $value');
                           switchController.setNotification(value);
+                          if (value=true){
+                            Get.changeTheme(ThemeData.light());
+                            
+                            
+                          }else if(value=false){
+                            Get.changeTheme(ThemeData.dark());
+                          }
                 
                 
                         })),
@@ -194,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                 title: Text('Favourites App'),
                 subtitle: Text('Mark the item u like'),
                 onTap: (){
-                  Get.to(OpacityApp());
+                  Get.to(FavouriteApp());
                 },
 
 
