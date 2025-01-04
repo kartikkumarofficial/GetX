@@ -22,9 +22,10 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(), // Dark theme
       themeMode: ThemeMode.light, // Initial theme mode
       home: HomePage(),
+      // defaultTransition: Transition.leftToRight,
       getPages: [
         GetPage(name: '/', page:()=> HomePage()),
-        GetPage(name: '/screentwo', page:()=> screen2()),
+        GetPage(name: '/screentwo', page:()=> screen2() , transition: Transition.fadeIn,),
         GetPage(name: '/screenthree', page:()=> screen3()),
       ],
     );
