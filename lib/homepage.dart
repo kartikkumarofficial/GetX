@@ -73,6 +73,7 @@ class _HomePageState extends State<HomePage> {
                 subtitle: Text('Building a bottomsheet with the help of getx'),
                 onTap:(){
                   Get.bottomSheet(
+
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.grey,
@@ -163,6 +164,7 @@ class _HomePageState extends State<HomePage> {
             subtitle: Text('Changes the opacity with slider'),
             onTap: (){
             Get.to(OpacityApp());
+
             },
         
         
